@@ -1,0 +1,12 @@
+GET http://localhost/phpPractice/0906/
+
+###
+
+GET http://localhost/phpPractice/0906/0906-15.form.php
+
+###
+
+POST http://localhost/phpPractice/0907/0907-02.form.php
+Content-Type: application/x-www-form-urlencoded
+
+email = dd5672003@test.com.tw&password = 12345

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form name="form1" style="display: none ;">
+        <input type="file" name="single" accept="image/png, image/jpeg">
+    </form>
+
+    <button onclick="document.form1.single.click()">選擇檔案直接上傳</button><!--"document.form1.single.click()"可以模擬form1執行lick的動作-->
+</body>
+
+<script>
+    document.form1.single.addEventListener('change', function(){
+        console.log(this.files);
+        const fd = new FormData(document.form1);
+        fetch('upload-single.api.php', {
+            method: 'POST',
+            body: fd
+        }).then(r=>r.json()).then(obj=>{
+            console.log(obj);
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//將promise包入function
+        const myPromise = (n) =>{
+            const rnd = 500+Math.random()*500; //隨機設置500~1000之間的數字
+            
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve({n, rnd});
+                }, rnd);
+            })
+        }
+
+        myPromise(2)
+        .then(r=>{
+            console.log(r);
+            return myPromise(5)
+        })
+        .then(r=>{
+            console.log(r);
+        })
+
+        
+    </script>
+
+</body>
+</html>

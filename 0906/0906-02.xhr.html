@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xhr</title>
+</head>
+<body>
+    <button onclick="loadData()">測試</button>
+    <div id="info"></div>
+
+    <script>
+        function loadData(){
+            const xhr = new XMLHttpRequest;
+            xhr.onload = function(){
+                document.querySelector("#info").innerHTML = xhr.responseText;
+            };
+            xhr.open("GET", "./../datas/data01.txt");
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

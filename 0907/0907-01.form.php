@@ -1,0 +1,54 @@
+<?php include __DIR__ . "/parts/html-head.php"; ?>
+<?php include __DIR__ . "/parts/navbar.php"; ?>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+
+                    <form name="form1" method="POST" action="" enctype="multipart/form-data" onsubmit="return checkForm();"><!-- <<<<===== -->
+                        <!-- #application/x-www-form-urlencoded -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="text" name="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" id="password">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" name="cb" class="form-check-input" id="cb">
+                            <label class="form-check-label" for="cb">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                    <a href="https://shopping.pchome.com.tw/" onclick="confirm('Buy?') ? null : event.preventDefault()">Pchome</a>
+                    <br>
+                    <a href="https://shopping.pchome.com.tw/" onclick="return false">Pchome</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include __DIR__ . "/parts/script.php"; ?>
+<script>
+    function checkForm(){
+
+        if (!cb.checked) {
+            alert('請勾選');
+            return false;
+        }
+    }
+
+    // document.forms
+    // documnet.form1
+    // document.form1.elements
+    // document.form1.elements[0]
+    // document.form1.elements['email']
+    // document.form1.email
+</script>
+<?php include __DIR__ . "/parts/html-foot.php"; ?>

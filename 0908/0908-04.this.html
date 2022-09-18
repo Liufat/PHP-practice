@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">123</button>
+
+    <script>
+        console.log(this);//window
+
+        const obj = {
+            a:'shin',
+            b:18,
+            f: function(){
+                console.log(this);
+                return this.b+1;
+            }
+        }
+
+        console.log(obj.a);
+        console.log(obj.f());
+
+        btn.onclick = function(){
+            console.log(1, this);
+        }
+
+        const f2 = function(){
+            console.log(2, this);
+        }
+        btn.addEventListener('click', f2)
+        
+        
+        btn.addEventListener('click', ()=>{
+            console.log(3, this);
+        })
+        f2();
+
+    </script>
+</body>
+</html>

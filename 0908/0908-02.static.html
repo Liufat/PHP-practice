@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+        class Person {
+            gender = 'male';
+
+            constructor(name = 'John', age = 18, ){
+                this.name = name;
+                this.age = age;
+            }
+
+            toString(){
+                const {name, age, gender} = this;
+                return JSON.stringify({name, age, gender}, null, 2);
+            }
+            static aaa(){
+                return 12;
+            }
+        }            
+
+        const p1 = new Person('David', 25);
+        p1.data = 'abc';
+        console.log(p1.name);
+        console.log(p1.age);
+        console.log(p1.gender);
+        console.log(p1.data);
+        console.log(p1);
+        console.log(p1.toString());
+
+
+        </script>
+</body>
+</html>
